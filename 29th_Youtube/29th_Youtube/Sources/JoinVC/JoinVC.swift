@@ -25,6 +25,10 @@ class JoinVC: BaseVC {
         safeButtonLayout()
         safeLabelLayout()
         nextButtonLayout()
+        
+        nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
     }
 
     private func safeButtonLayout(){
@@ -59,7 +63,7 @@ class JoinVC: BaseVC {
         nextButton.setTitleColor(.white, for: .normal)
         nextButton.backgroundColor = .lightGray
         nextButton.layer.cornerRadius = 10
-        
+        nextButton.isUserInteractionEnabled = false
         nextButton.snp.makeConstraints{ (make) in
             make.centerX.equalTo(self.view)
             make.height.equalTo(40)
@@ -69,6 +73,17 @@ class JoinVC: BaseVC {
         }
         
         nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
+    }
+    
+    @objc func textFillCheck(){
+        if nameTF.text == "" || emailTF.text == "" || pwTF.text == ""{
+            nextButton.backgroundColor = .lightGray
+            nextButton.isUserInteractionEnabled = false
+        }
+        else{
+            nextButton.backgroundColor = .googleBlue
+            nextButton.isUserInteractionEnabled = true
+        }
     }
     
     @objc func toSafe(){

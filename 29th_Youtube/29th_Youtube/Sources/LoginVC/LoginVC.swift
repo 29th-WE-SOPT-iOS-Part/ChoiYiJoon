@@ -44,12 +44,10 @@ class LoginVC: BaseVC {
     
     @objc func textFillCheck(){
         if nameTF.text == "" || emailTF.text == "" || pwTF.text == ""{
-            print("empty")
             nextButton.backgroundColor = .lightGray
             nextButton.isUserInteractionEnabled = false
         }
         else{
-            print("not empty")
             nextButton.backgroundColor = .googleBlue
             nextButton.isUserInteractionEnabled = true
         }
