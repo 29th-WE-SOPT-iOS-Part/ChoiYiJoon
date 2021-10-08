@@ -26,21 +26,34 @@ class LoginVC: BaseVC {
         nextButtonLayout()
     }
     
+    @objc func toJoin(){
+        let nextVC = JoinVC()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @objc func toWelcome(){
+        let nextVC = WelcomeVC()
+        nextVC.name = nameTF.text
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    
     private func makeAcButtonLayout(){
         makeAcButton.setTitle("계정만들기", for: .normal)
-        makeAcButton.setTitleColor(.systemBlue, for: .normal)
+        makeAcButton.setTitleColor(.googleBlue, for: .normal)
         makeAcButton.snp.makeConstraints{ (make) in
             make.width.equalTo(100)
             make.height.equalTo(40)
             make.leading.equalTo(30)
             make.top.equalTo(self.pwTF.snp.bottom).offset(60)
         }
+        makeAcButton.addTarget(self, action: #selector(toJoin), for: .touchUpInside)
     }
     
     private func nextButtonLayout(){
         nextButton.setTitle("다음", for: .normal)
         nextButton.setTitleColor(.white, for: .normal)
-        nextButton.backgroundColor = .systemBlue
+        nextButton.backgroundColor = .googleBlue
         nextButton.layer.cornerRadius = 10
         nextButton.snp.makeConstraints{ (make) in
             make.width.equalTo(70)
@@ -48,6 +61,7 @@ class LoginVC: BaseVC {
             make.trailing.equalTo(-30)
             make.top.equalTo(self.pwTF.snp.bottom).offset(60)
         }
+        nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
     }
 
 }

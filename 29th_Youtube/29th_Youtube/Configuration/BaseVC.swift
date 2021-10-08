@@ -104,6 +104,7 @@ class BaseVC: UIViewController {
     func pwTFLayout(){
         pwTF.placeholder = "비밀번호 입력"
         pwTF.borderStyle = .roundedRect
+        pwTF.isSecureTextEntry = true
         pwTF.snp.makeConstraints{ (make) in
             make.centerX.equalTo(self.view)
             make.height.equalTo(50)
