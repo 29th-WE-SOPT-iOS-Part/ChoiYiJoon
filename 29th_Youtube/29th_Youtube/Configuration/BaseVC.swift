@@ -80,6 +80,7 @@ class BaseVC: UIViewController {
     func nameTFLayout(){
         nameTF.placeholder = "이름을 입력해주세요"
         nameTF.borderStyle = .roundedRect
+        nameTF.autocorrectionType = .no
         nameTF.snp.makeConstraints{ (make) in
             make.centerX.equalTo(self.view)
             make.height.equalTo(50)
@@ -92,6 +93,7 @@ class BaseVC: UIViewController {
     func emailTFLayout(){
         emailTF.placeholder = "이메일 또는 휴대전화"
         emailTF.borderStyle = .roundedRect
+        emailTF.autocorrectionType = .no
         emailTF.snp.makeConstraints{ (make) in
             make.centerX.equalTo(self.view)
             make.height.equalTo(50)
@@ -105,6 +107,7 @@ class BaseVC: UIViewController {
         pwTF.placeholder = "비밀번호 입력"
         pwTF.borderStyle = .roundedRect
         pwTF.isSecureTextEntry = true
+        pwTF.autocorrectionType = .no
         pwTF.snp.makeConstraints{ (make) in
             make.centerX.equalTo(self.view)
             make.height.equalTo(50)
