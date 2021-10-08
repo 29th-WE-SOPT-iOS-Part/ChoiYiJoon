@@ -32,13 +32,14 @@ class JoinVC: BaseVC {
         safeButton.layer.borderColor = UIColor.lightGray.cgColor
         safeButton.layer.borderWidth = 1
         safeButton.layer.cornerRadius = 3
+        safeButton.contentMode = .scaleToFill
         safeButton.snp.makeConstraints{ (make) in
             make.width.height.equalTo(17)
             make.leading.equalTo(30)
             make.top.equalTo(self.pwTF.snp.bottom).offset(15)
         }
         
-        nextButton.addTarget(self, action: #selector(toSafe), for: .touchUpInside)
+        safeButton.addTarget(self, action: #selector(toSafe), for: .touchUpInside)
     }
     
     private func safeLabelLayout(){
@@ -58,6 +59,7 @@ class JoinVC: BaseVC {
         nextButton.setTitleColor(.white, for: .normal)
         nextButton.backgroundColor = .lightGray
         nextButton.layer.cornerRadius = 10
+        
         nextButton.snp.makeConstraints{ (make) in
             make.centerX.equalTo(self.view)
             make.height.equalTo(40)
@@ -70,7 +72,17 @@ class JoinVC: BaseVC {
     }
     
     @objc func toSafe(){
-        pwTF.isSecureTextEntry = false
+        safeButton.isSelected = !safeButton.isSelected
+        
+        if safeButton.isSelected{
+            safeButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+            pwTF.isSecureTextEntry = false
+        }
+        else{
+            safeButton.setImage(UIImage(systemName: "blank"), for: .normal)
+            pwTF.isSecureTextEntry = true
+        }
+        
     }
     
     @objc func toWelcome(){
