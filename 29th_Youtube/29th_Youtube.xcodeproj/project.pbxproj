@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,7 @@
 		77FFCCEA27105BF3000E49F7 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCE927105BF3000E49F7 /* WelcomeVC.swift */; };
 		77FFCCEC27105C04000E49F7 /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCEB27105C04000E49F7 /* JoinVC.swift */; };
 		77FFCCEE27105C12000E49F7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCED27105C12000E49F7 /* LoginVC.swift */; };
-		77FFCCF027105CD9000E49F7 /* Temp1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCEF27105CD9000E49F7 /* Temp1.swift */; };
+		77FFCCF227106C4C000E49F7 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCF127106C4C000E49F7 /* BaseVC.swift */; };
 		EC1E2CA5AE3EDF7ADD374017 /* Pods_29th_Youtube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF839CBFCAF6190C068854A /* Pods_29th_Youtube.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		77FFCCE927105BF3000E49F7 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		77FFCCEB27105C04000E49F7 /* JoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinVC.swift; sourceTree = "<group>"; };
 		77FFCCED27105C12000E49F7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		77FFCCEF27105CD9000E49F7 /* Temp1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp1.swift; sourceTree = "<group>"; };
+		77FFCCF127106C4C000E49F7 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		8BF839CBFCAF6190C068854A /* Pods_29th_Youtube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_29th_Youtube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -52,7 +52,6 @@
 				1515ED822D173FDD791B030B /* Pods-29th_Youtube.debug.xcconfig */,
 				2EE899D37341854FCE6A52A4 /* Pods-29th_Youtube.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,7 +90,7 @@
 		77FFCCE427105B28000E49F7 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				77FFCCEF27105CD9000E49F7 /* Temp1.swift */,
+				77FFCCF127106C4C000E49F7 /* BaseVC.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -256,7 +255,7 @@
 				77FFCCD127105488000E49F7 /* AppDelegate.swift in Sources */,
 				77FFCCD327105488000E49F7 /* SceneDelegate.swift in Sources */,
 				77FFCCEE27105C12000E49F7 /* LoginVC.swift in Sources */,
-				77FFCCF027105CD9000E49F7 /* Temp1.swift in Sources */,
+				77FFCCF227106C4C000E49F7 /* BaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
