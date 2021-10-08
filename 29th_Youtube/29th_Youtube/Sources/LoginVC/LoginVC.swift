@@ -24,6 +24,10 @@ class LoginVC: BaseVC {
         
         makeAcButtonLayout()
         nextButtonLayout()
+        
+        nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
     }
     
     @objc func toJoin(){
@@ -36,6 +40,19 @@ class LoginVC: BaseVC {
         nextVC.name = nameTF.text
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
+    }
+    
+    @objc func textFillCheck(){
+        if nameTF.text == "" || emailTF.text == "" || pwTF.text == ""{
+            print("empty")
+            nextButton.backgroundColor = .lightGray
+            nextButton.isUserInteractionEnabled = false
+        }
+        else{
+            print("not empty")
+            nextButton.backgroundColor = .googleBlue
+            nextButton.isUserInteractionEnabled = true
+        }
     }
     
     private func makeAcButtonLayout(){
@@ -53,8 +70,9 @@ class LoginVC: BaseVC {
     private func nextButtonLayout(){
         nextButton.setTitle("다음", for: .normal)
         nextButton.setTitleColor(.white, for: .normal)
-        nextButton.backgroundColor = .googleBlue
+        nextButton.backgroundColor = .lightGray
         nextButton.layer.cornerRadius = 10
+        nextButton.isUserInteractionEnabled = false
         nextButton.snp.makeConstraints{ (make) in
             make.width.equalTo(70)
             make.height.equalTo(40)
