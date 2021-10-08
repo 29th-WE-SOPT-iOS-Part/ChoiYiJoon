@@ -22,17 +22,17 @@ class BaseVC: UIViewController {
         view.backgroundColor = .white
         setNavigation()
         
-        self.view.addSubview(googleImg)
-        self.view.addSubview(mainLabel)
-        self.view.addSubview(infoLabel)
-        self.view.addSubview(nameTF)
-        self.view.addSubview(emailTF)
-        self.view.addSubview(pwTF)
+        view.addSubview(googleImg)
+        view.addSubview(mainLabel)
+        view.addSubview(infoLabel)
+        view.addSubview(nameTF)
+        view.addSubview(emailTF)
+        view.addSubview(pwTF)
         
-        self.googleImgLayout()
-        self.nameTFLayout()
-        self.emailTFLayout()
-        self.pwTFLayout()
+        googleImgLayout()
+        nameTFLayout()
+        emailTFLayout()
+        pwTFLayout()
     }
 
     private func setNavigation(){
