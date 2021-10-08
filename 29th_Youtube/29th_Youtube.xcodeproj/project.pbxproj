@@ -15,6 +15,7 @@
 		77FFCCEC27105C04000E49F7 /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCEB27105C04000E49F7 /* JoinVC.swift */; };
 		77FFCCEE27105C12000E49F7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCED27105C12000E49F7 /* LoginVC.swift */; };
 		77FFCCF227106C4C000E49F7 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCF127106C4C000E49F7 /* BaseVC.swift */; };
+		77FFCCF427107B7C000E49F7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCF327107B7C000E49F7 /* UIColor.swift */; };
 		EC1E2CA5AE3EDF7ADD374017 /* Pods_29th_Youtube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF839CBFCAF6190C068854A /* Pods_29th_Youtube.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		77FFCCEB27105C04000E49F7 /* JoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinVC.swift; sourceTree = "<group>"; };
 		77FFCCED27105C12000E49F7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		77FFCCF127106C4C000E49F7 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		77FFCCF327107B7C000E49F7 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		8BF839CBFCAF6190C068854A /* Pods_29th_Youtube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_29th_Youtube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				77FFCCF127106C4C000E49F7 /* BaseVC.swift */,
+				77FFCCF327107B7C000E49F7 /* UIColor.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77FFCCEC27105C04000E49F7 /* JoinVC.swift in Sources */,
+				77FFCCF427107B7C000E49F7 /* UIColor.swift in Sources */,
 				77FFCCEA27105BF3000E49F7 /* WelcomeVC.swift in Sources */,
 				77FFCCD127105488000E49F7 /* AppDelegate.swift in Sources */,
 				77FFCCD327105488000E49F7 /* SceneDelegate.swift in Sources */,
