@@ -32,6 +32,13 @@ class LoginVC: BaseVC {
         setupAutoLayout()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        clearTextField()
+        nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+    }
+    
     private func setupAutoLayout(){
         view.addSubviews([makeAcButton, nextButton])
         
@@ -51,9 +58,6 @@ class LoginVC: BaseVC {
         
         makeAcButton.addTarget(self, action: #selector(toJoin), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
-        nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
-        emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
-        pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
     }
     
     @objc func toJoin(){

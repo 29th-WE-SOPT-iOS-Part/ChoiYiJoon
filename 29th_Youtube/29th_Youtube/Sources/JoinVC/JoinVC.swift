@@ -40,6 +40,13 @@ class JoinVC: BaseVC {
         setupAutoLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        clearTextField()
+        nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+    }
+    
     private func setupAutoLayout(){
         view.addSubviews([safeLabel, safeButton, nextButton])
         
@@ -64,9 +71,6 @@ class JoinVC: BaseVC {
         
         safeButton.addTarget(self, action: #selector(toSafe), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
-        nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
-        emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
-        pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
     }
     
     @objc func textFillCheck(){

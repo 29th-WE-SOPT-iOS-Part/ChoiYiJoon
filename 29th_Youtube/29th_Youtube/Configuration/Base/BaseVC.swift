@@ -56,10 +56,6 @@ class BaseVC: UIViewController {
         setNavigation()
         setupAutoLayout()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        clearTextField()
-    }
 
     private func setNavigation(){
         self.navigationController?.navigationBar.isHidden = true
@@ -114,7 +110,7 @@ class BaseVC: UIViewController {
     }
     
     func clearTextField(){
-        nameTF.text = ""
+        nameTF.text = "" 
         emailTF.text = ""
         pwTF.text = ""
     }
