@@ -9,35 +9,37 @@ import Foundation
 import UIKit
 
 class BaseTBC: UITabBarController, UITabBarControllerDelegate {
-
-    let homeTabBarItem  = UITabBarItem(title: "홈", image: UIImage(named: "homeIcon"), tag: 0)
-    let shortsTabBarItem = UITabBarItem(title: "Shorts", image: UIImage(named: "shortsIcon"), tag: 1)
-    let plusTabBarItem  = UITabBarItem(title: "추가", image: UIImage(named: "plusCircleIcon"), tag: 2)
-    let subscribeTabBarItem  = UITabBarItem(title: "구독", image: UIImage(named: "subscriptionsIcon"), tag: 3)
-    let archiveTabBarItem  = UITabBarItem(title: "보관함", image: UIImage(named: "LibraryIcon"), tag: 4)
+    
+    let titles = ["홈", "Shorts", "추가", "구독", "보관함"]
+    
+    let defaultImages = [Const.Image.homeIcon,
+                         Const.Image.shortsIcon,
+                         Const.Image.plusCircleIcon,
+                         Const.Image.subscriptionsIcon,
+                         Const.Image.LibraryIcon]
+    
+    let selectedImages = [Const.Image.homeIconFill,
+                         Const.Image.shortsIconFill,
+                         Const.Image.plusCircleIcon,
+                         Const.Image.subscriptionsIconFill,
+                         Const.Image.LibraryIconFill]
+    
+    let views = [HomeVC(), ShortsVC(), PlusVC(), SubscribeVC(), ArchiveVC()]
+    var VCs : [UINavigationController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        let homeVC  = HomeVC() 
-        let shortsVC = ShortsVC()
-        let plusVC  = PlusVC()
-        let subscribeVC  = SubscribeVC()
-        let archiveVC = ArchiveVC()
         
-        let homeNVC = UINavigationController(rootViewController: homeVC)
-        let shortsNVC = UINavigationController(rootViewController: shortsVC)
-        let plusNVC = UINavigationController(rootViewController: plusVC)
-        let subscribeNVC = UINavigationController(rootViewController: subscribeVC)
-        let archiveNVC = UINavigationController(rootViewController: archiveVC)
+        views.forEach{
+            VCs.append(UINavigationController(rootViewController: $0))
+        }
         
-        homeNVC.tabBarItem = homeTabBarItem
-        shortsNVC.tabBarItem = shortsTabBarItem
-        plusNVC.tabBarItem  = plusTabBarItem
-        subscribeNVC.tabBarItem  = subscribeTabBarItem
-        archiveNVC.tabBarItem  = archiveTabBarItem
-       
-        self.viewControllers = [homeNVC,shortsNVC,plusNVC,subscribeNVC,archiveNVC]
+        viewControllers = VCs
+        
+        viewControllers?.indices.forEach{
+            viewControllers?[$0].tabBarItem = UITabBarItem(title: titles[$0], image: defaultImages[$0], selectedImage: selectedImages[$0])
+        }
+        
         self.delegate = self
 
         UITabBar.appearance().barTintColor = .white
