@@ -22,7 +22,7 @@ class JoinVC: BaseVC {
     private let safeLabel = UILabel().then{
         $0.text = "비밀번호 표시"
         $0.textColor = .black
-        $0.font = UIFont.systemFont(ofSize: 12.0)
+        $0.font = UIFont.systemFont(ofSize: 13.0)
         $0.sizeToFit()
     }
     
@@ -44,22 +44,22 @@ class JoinVC: BaseVC {
         view.addSubviews([safeLabel, safeButton, nextButton])
         
         safeButton.snp.makeConstraints{ (make) in
-            make.width.height.equalTo(17)
-            make.top.equalTo(pwTF.snp.bottom).offset(15)
-            make.leading.equalTo(30)
+            make.width.height.equalTo(16)
+            make.top.equalTo(pwTF.snp.bottom).offset(17)
+            make.leading.equalTo(21)
         }
         
         safeLabel.snp.makeConstraints{ (make) in
             make.centerY.equalTo(safeButton)
-            make.top.equalTo(pwTF.snp.bottom).offset(15)
-            make.left.equalTo(safeButton.snp.right).offset(10)
+            make.top.equalTo(pwTF.snp.bottom).offset(14)
+            make.left.equalTo(safeButton.snp.right).offset(11)
         }
         
         nextButton.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
-            make.height.equalTo(40)
-            make.top.equalTo(safeButton.snp.bottom).offset(60)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.height.equalTo(42)
+            make.top.equalTo(safeButton.snp.bottom).offset(31)
+            make.leading.trailing.equalToSuperview().inset(22)
         }
         
         safeButton.addTarget(self, action: #selector(toSafe), for: .touchUpInside)
