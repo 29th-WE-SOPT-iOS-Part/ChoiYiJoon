@@ -26,7 +26,7 @@ class LoginVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelLayout(mainName: "로그인", infoName: "YouTube로 이동하며 계속하세요. 앱 및 Safari에서도 Google 서비스에 로그인 합니다.")
+        labelLayout(mainName: "로그인", infoName: "YouTube로 이동하며 계속하세요. 앱 및 Safari에서도 Google 서비스에 로그인됩니다.")
         setupAutoLayout()
     }
 

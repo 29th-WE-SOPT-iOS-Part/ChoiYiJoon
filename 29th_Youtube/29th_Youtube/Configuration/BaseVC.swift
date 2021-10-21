@@ -18,17 +18,17 @@ class BaseVC: UIViewController {
     
     let mainLabel = UILabel().then{
         $0.textColor = .black
-        $0.font = UIFont.boldSystemFont(ofSize: 27.0)
+        $0.font = UIFont.boldSystemFont(ofSize: 22.0)
         $0.sizeToFit()
     }
     
     let infoLabel = UILabel().then{
-        $0.textColor = .lightGray
-        $0.font = UIFont.systemFont(ofSize: 15.0)
-        $0.sizeToFit()
+        $0.textColor = .black
+        $0.font = UIFont.systemFont(ofSize: 14.0)
         $0.lineBreakMode = .byWordWrapping
         $0.numberOfLines = 2
         $0.textAlignment = .center
+        $0.sizeToFit()
     }
     
     let nameTF = UITextField().then{
@@ -65,42 +65,42 @@ class BaseVC: UIViewController {
         view.addSubviews([googleImg, mainLabel, infoLabel, nameTF, emailTF, pwTF])
         
         googleImg.snp.makeConstraints{ (make) in
-            make.width.equalTo(160)
-            make.height.equalTo(70)
+            make.width.equalTo(118)
+            make.height.equalTo(40)
             make.centerX.equalToSuperview()
-            make.top.equalTo(70)
+            make.top.equalTo(110)
         }
         
         mainLabel.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(googleImg.snp.bottom).offset(10)
+            make.top.equalTo(googleImg.snp.bottom).offset(23)
         }
         
         infoLabel.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(mainLabel.snp.bottom).offset(35)
-            make.leading.trailing.equalToSuperview().inset(10)
+            make.top.equalTo(mainLabel.snp.bottom).offset(14)
+            make.leading.trailing.equalToSuperview().inset(44)
         }
         
         nameTF.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
-            make.height.equalTo(50)
-            make.top.equalTo(infoLabel.snp.bottom).offset(35)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.height.equalTo(48)
+            make.top.equalTo(infoLabel.snp.bottom).offset(68)
+            make.leading.trailing.equalToSuperview().inset(22)
         }
         
         emailTF.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
-            make.height.equalTo(50)
-            make.top.equalTo(nameTF.snp.bottom).offset(15)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.height.equalTo(48)
+            make.top.equalTo(nameTF.snp.bottom).offset(17)
+            make.leading.trailing.equalToSuperview().inset(22)
         }
         
         pwTF.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
-            make.height.equalTo(50)
-            make.top.equalTo(emailTF.snp.bottom).offset(15)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.height.equalTo(48)
+            make.top.equalTo(emailTF.snp.bottom).offset(17)
+            make.leading.trailing.equalToSuperview().inset(22)
         }
     }
     
