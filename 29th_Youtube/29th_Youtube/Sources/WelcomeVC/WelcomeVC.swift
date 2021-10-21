@@ -32,6 +32,13 @@ class WelcomeVC: UIViewController {
         $0.backgroundColor = .googleBlue
         $0.layer.cornerRadius = 10
     }
+    
+    private let accountLabel = UILabel().then{
+        $0.textColor = .googleBlue
+        $0.font = UIFont.boldSystemFont(ofSize: 14.0)
+        $0.text = "다른 계정으로 로그인하기"
+        $0.sizeToFit()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,26 +48,33 @@ class WelcomeVC: UIViewController {
     }
     
     private func setupAutoLayout(){
-        view.addSubviews([googleImg, welcomeLabel, okButton])
+        view.addSubviews([googleImg, welcomeLabel, okButton, accountLabel])
         
         googleImg.snp.makeConstraints{ (make) in
-            make.width.equalTo(160)
-            make.height.equalTo(70)
-            make.centerX.equalTo(self.view)
-            make.top.equalTo(220)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(118)
+            make.height.equalTo(40)
+            make.top.equalTo(248)
         }
         
         welcomeLabel.snp.makeConstraints{ (make) in
-            make.centerX.equalTo(self.view)
-            make.top.equalTo(googleImg.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(googleImg.snp.bottom).offset(23)
         }
         
         okButton.snp.makeConstraints{ (make) in
-            make.centerX.equalTo(self.view)
-            make.height.equalTo(40)
-            make.top.equalTo(self.welcomeLabel.snp.bottom).offset(60)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(42)
+            make.top.equalTo(welcomeLabel.snp.bottom).offset(53)
+            make.leading.trailing.equalToSuperview().inset(22)
         }
+        
+        accountLabel.snp.makeConstraints{ (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(okButton.snp.bottom).offset(23)
+            make.leading.trailing.equalToSuperview().inset(111)
+        }
+        
         okButton.addTarget(self, action: #selector(toDismiss), for: .touchUpInside)
     }
     

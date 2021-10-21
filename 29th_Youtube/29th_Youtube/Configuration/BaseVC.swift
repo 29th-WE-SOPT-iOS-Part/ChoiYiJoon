@@ -65,9 +65,9 @@ class BaseVC: UIViewController {
         view.addSubviews([googleImg, mainLabel, infoLabel, nameTF, emailTF, pwTF])
         
         googleImg.snp.makeConstraints{ (make) in
+            make.centerX.equalToSuperview()
             make.width.equalTo(118)
             make.height.equalTo(40)
-            make.centerX.equalToSuperview()
             make.top.equalTo(110)
         }
         
