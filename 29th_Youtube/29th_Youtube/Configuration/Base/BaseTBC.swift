@@ -11,10 +11,10 @@ import UIKit
 class BaseTBC: UITabBarController, UITabBarControllerDelegate {
 
     let homeTabBarItem  = UITabBarItem(title: "홈", image: UIImage(named: "homeIcon"), tag: 0)
-    let shortsTabBarItem = UITabBarItem(title: "Shorts", image: UIImage(named: "homeIcon"), tag: 1)
-    let plusTabBarItem  = UITabBarItem(title: "추가", image: UIImage(named: "homeIcon"), tag: 2)
-    let subscribeTabBarItem  = UITabBarItem(title: "구독", image: UIImage(named: "homeIcon"), tag: 3)
-    let archiveTabBarItem  = UITabBarItem(title: "보관함", image: UIImage(named: "homeIcon"), tag: 4)
+    let shortsTabBarItem = UITabBarItem(title: "Shorts", image: UIImage(named: "shortsIcon"), tag: 1)
+    let plusTabBarItem  = UITabBarItem(title: "추가", image: UIImage(named: "plusCircleIcon"), tag: 2)
+    let subscribeTabBarItem  = UITabBarItem(title: "구독", image: UIImage(named: "subscriptionsIcon"), tag: 3)
+    let archiveTabBarItem  = UITabBarItem(title: "보관함", image: UIImage(named: "LibraryIcon"), tag: 4)
     
     override func viewDidLoad() {
         super.viewDidLoad()
