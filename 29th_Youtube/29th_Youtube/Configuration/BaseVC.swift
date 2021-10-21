@@ -84,32 +84,28 @@ class BaseVC: UIViewController {
         infoLabel.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(mainLabel.snp.bottom).offset(35)
-            make.leading.equalTo(10)
-            make.trailing.equalTo(-10)
+            make.leading.trailing.equalToSuperview().inset(10)
         }
         
         nameTF.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
             make.top.equalTo(infoLabel.snp.bottom).offset(35)
-            make.leading.equalTo(30)
-            make.trailing.equalTo(-30)
+            make.leading.trailing.equalToSuperview().inset(30)
         }
         
         emailTF.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
             make.top.equalTo(nameTF.snp.bottom).offset(15)
-            make.leading.equalTo(30)
-            make.trailing.equalTo(-30)
+            make.leading.trailing.equalToSuperview().inset(30)
         }
         
         pwTF.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
             make.top.equalTo(emailTF.snp.bottom).offset(15)
-            make.leading.equalTo(30)
-            make.trailing.equalTo(-30)
+            make.leading.trailing.equalToSuperview().inset(30)
         }
     }
     

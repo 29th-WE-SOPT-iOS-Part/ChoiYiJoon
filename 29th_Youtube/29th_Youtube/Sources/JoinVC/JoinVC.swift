@@ -47,23 +47,22 @@ class JoinVC: BaseVC {
         
         safeButton.snp.makeConstraints{ (make) in
             make.width.height.equalTo(17)
+            make.top.equalTo(pwTF.snp.bottom).offset(15)
             make.leading.equalTo(30)
-            make.top.equalTo(self.pwTF.snp.bottom).offset(15)
         }
         safeButton.addTarget(self, action: #selector(toSafe), for: .touchUpInside)
         
         safeLabel.snp.makeConstraints{ (make) in
             make.centerY.equalTo(safeButton)
-            make.top.equalTo(self.pwTF.snp.bottom).offset(15)
+            make.top.equalTo(pwTF.snp.bottom).offset(15)
             make.left.equalTo(safeButton.snp.right).offset(10)
         }
         
         nextButton.snp.makeConstraints{ (make) in
-            make.centerX.equalTo(self.view)
+            make.centerX.equalToSuperview()
             make.height.equalTo(40)
-            make.trailing.equalTo(-30)
-            make.leading.equalTo(30)
-            make.top.equalTo(self.safeButton.snp.bottom).offset(60)
+            make.top.equalTo(safeButton.snp.bottom).offset(60)
+            make.leading.trailing.equalToSuperview().inset(30)
         }
         nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
         

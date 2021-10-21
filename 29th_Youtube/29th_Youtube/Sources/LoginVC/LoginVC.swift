@@ -61,16 +61,16 @@ class LoginVC: BaseVC {
         makeAcButton.snp.makeConstraints{ (make) in
             make.width.equalTo(100)
             make.height.equalTo(40)
+            make.top.equalTo(pwTF.snp.bottom).offset(60)
             make.leading.equalTo(30)
-            make.top.equalTo(self.pwTF.snp.bottom).offset(60)
         }
         makeAcButton.addTarget(self, action: #selector(toJoin), for: .touchUpInside)
         
         nextButton.snp.makeConstraints{ (make) in
             make.width.equalTo(70)
             make.height.equalTo(40)
+            make.top.equalTo(pwTF.snp.bottom).offset(60)
             make.trailing.equalTo(-30)
-            make.top.equalTo(self.pwTF.snp.bottom).offset(60)
         }
         nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
         
