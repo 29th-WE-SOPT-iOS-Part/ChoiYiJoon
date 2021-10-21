@@ -36,9 +36,7 @@ class JoinVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mainLabelLayout(labelName: "회원가입")
-        infoLabelLayout(labelName: "")
+        labelLayout(mainName: "회원가입", infoName: "")
         setupAutoLayout()
     }
     
@@ -50,7 +48,6 @@ class JoinVC: BaseVC {
             make.top.equalTo(pwTF.snp.bottom).offset(15)
             make.leading.equalTo(30)
         }
-        safeButton.addTarget(self, action: #selector(toSafe), for: .touchUpInside)
         
         safeLabel.snp.makeConstraints{ (make) in
             make.centerY.equalTo(safeButton)
@@ -64,8 +61,9 @@ class JoinVC: BaseVC {
             make.top.equalTo(safeButton.snp.bottom).offset(60)
             make.leading.trailing.equalToSuperview().inset(30)
         }
-        nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
         
+        safeButton.addTarget(self, action: #selector(toSafe), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
         nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
         emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
         pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)

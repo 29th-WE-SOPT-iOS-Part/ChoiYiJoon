@@ -26,9 +26,7 @@ class LoginVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mainLabelLayout(labelName: "로그인")
-        infoLabelLayout(labelName: "YouTube로 이동하며 계속하세요. 앱 및 Safari에서도 Google 서비스에 로그인 합니다.")
+        labelLayout(mainName: "로그인", infoName: "YouTube로 이동하며 계속하세요. 앱 및 Safari에서도 Google 서비스에 로그인 합니다.")
         setupAutoLayout()
     }
 
@@ -41,7 +39,6 @@ class LoginVC: BaseVC {
             make.top.equalTo(pwTF.snp.bottom).offset(60)
             make.leading.equalTo(30)
         }
-        makeAcButton.addTarget(self, action: #selector(toJoin), for: .touchUpInside)
         
         nextButton.snp.makeConstraints{ (make) in
             make.width.equalTo(70)
@@ -49,8 +46,9 @@ class LoginVC: BaseVC {
             make.top.equalTo(pwTF.snp.bottom).offset(60)
             make.trailing.equalTo(-30)
         }
-        nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
         
+        makeAcButton.addTarget(self, action: #selector(toJoin), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
         nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
         emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
         pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)

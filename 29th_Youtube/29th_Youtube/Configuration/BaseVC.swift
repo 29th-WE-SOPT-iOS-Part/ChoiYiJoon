@@ -11,12 +11,24 @@ import Then
 
 class BaseVC: UIViewController {
     
-    var mainLabel = UILabel()
-    var infoLabel = UILabel()
-    
     private let googleImg = UIImageView().then{
         $0.image = UIImage(named: "googleImg")
         $0.contentMode = .scaleAspectFit
+    }
+    
+    let mainLabel = UILabel().then{
+        $0.textColor = .black
+        $0.font = UIFont.boldSystemFont(ofSize: 27.0)
+        $0.sizeToFit()
+    }
+    
+    let infoLabel = UILabel().then{
+        $0.textColor = .lightGray
+        $0.font = UIFont.systemFont(ofSize: 15.0)
+        $0.sizeToFit()
+        $0.lineBreakMode = .byWordWrapping
+        $0.numberOfLines = 2
+        $0.textAlignment = .center
     }
     
     let nameTF = UITextField().then{
@@ -48,24 +60,7 @@ class BaseVC: UIViewController {
     private func setNavigation(){
         self.navigationController?.navigationBar.isHidden = true
     }
-    
-    func mainLabelLayout(labelName: String){
-        mainLabel.text = labelName
-        mainLabel.textColor = .black
-        mainLabel.font = UIFont.boldSystemFont(ofSize: 27.0)
-        mainLabel.sizeToFit()
-    }
-    
-    func infoLabelLayout(labelName: String){
-        infoLabel.text = labelName
-        infoLabel.textColor = .lightGray
-        infoLabel.font = UIFont.systemFont(ofSize: 15.0)
-        infoLabel.sizeToFit()
-        infoLabel.lineBreakMode = .byWordWrapping
-        infoLabel.numberOfLines = 2
-        infoLabel.textAlignment = .center
-    }
-    
+
     private func setupAutoLayout(){
         view.addSubviews([googleImg, mainLabel, infoLabel, nameTF, emailTF, pwTF])
         
@@ -107,6 +102,11 @@ class BaseVC: UIViewController {
             make.top.equalTo(emailTF.snp.bottom).offset(15)
             make.leading.trailing.equalToSuperview().inset(30)
         }
+    }
+    
+    func labelLayout(mainName: String, infoName: String){
+        mainLabel.text = mainName
+        infoLabel.text = infoName
     }
     
 }
