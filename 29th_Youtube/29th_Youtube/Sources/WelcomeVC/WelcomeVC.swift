@@ -75,15 +75,17 @@ class WelcomeVC: UIViewController {
             make.leading.trailing.equalToSuperview().inset(111)
         }
         
-        okButton.addTarget(self, action: #selector(toDismiss), for: .touchUpInside)
+        okButton.addTarget(self, action: #selector(toTabBar), for: .touchUpInside)
     }
     
     func welcomeLabelLayout(labelName: String){
         welcomeLabel.text = "\(labelName)님\n환영합니다!"
     }
     
-    @objc func toDismiss(){
-        self.dismiss(animated: true, completion: nil)
+    @objc func toTabBar(){
+        let tabBar = BaseTBC()
+        tabBar.modalPresentationStyle = .fullScreen
+        self.present(tabBar, animated: true, completion: nil)
     }
     
 }

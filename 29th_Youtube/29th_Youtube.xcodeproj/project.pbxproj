@@ -14,6 +14,7 @@
 		77DAC8952721FE6000B576D9 /* PlusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8942721FE6000B576D9 /* PlusVC.swift */; };
 		77DAC8972721FE7400B576D9 /* SubscribeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8962721FE7400B576D9 /* SubscribeVC.swift */; };
 		77DAC8992721FE8200B576D9 /* ArchiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8982721FE8200B576D9 /* ArchiveVC.swift */; };
+		77DAC89D2721FF8F00B576D9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC89C2721FF8F00B576D9 /* UIViewController.swift */; };
 		77FFCCD127105488000E49F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCD027105488000E49F7 /* AppDelegate.swift */; };
 		77FFCCD327105488000E49F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCD227105488000E49F7 /* SceneDelegate.swift */; };
 		77FFCCDA2710548D000E49F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77FFCCD92710548D000E49F7 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		77DAC8942721FE6000B576D9 /* PlusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusVC.swift; sourceTree = "<group>"; };
 		77DAC8962721FE7400B576D9 /* SubscribeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeVC.swift; sourceTree = "<group>"; };
 		77DAC8982721FE8200B576D9 /* ArchiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveVC.swift; sourceTree = "<group>"; };
+		77DAC89C2721FF8F00B576D9 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		77FFCCCD27105487000E49F7 /* 29th_Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 29th_Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77FFCCD027105488000E49F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77FFCCD227105488000E49F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				77FFCCF327107B7C000E49F7 /* UIColor.swift */,
 				77DAC88527215FFB00B576D9 /* UIView.swift */,
+				77DAC89C2721FF8F00B576D9 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				77FFCCEE27105C12000E49F7 /* LoginVC.swift in Sources */,
 				77DAC8932721FE5400B576D9 /* ShortsVC.swift in Sources */,
 				77FFCCF227106C4C000E49F7 /* BaseVC.swift in Sources */,
+				77DAC89D2721FF8F00B576D9 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

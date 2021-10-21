@@ -10,11 +10,11 @@ import UIKit
 
 class BaseTBC: UITabBarController, UITabBarControllerDelegate {
 
-    let homeTabBarItem  = UITabBarItem(title: "홈", image: UIImage(named: "home"), tag: 0)
-    let shortsTabBarItem = UITabBarItem(title: "Shorts", image: UIImage(named: "icArchive"), tag: 1)
-    let plusTabBarItem  = UITabBarItem(title: "추가", image: UIImage(named: "icPost"), tag: 2)
-    let subscribeTabBarItem  = UITabBarItem(title: "구독", image: UIImage(named: "icReminder"), tag: 3)
-    let archiveTabBarItem  = UITabBarItem(title: "보관함", image: UIImage(named: "icMypage"), tag: 4)
+    let homeTabBarItem  = UITabBarItem(title: "홈", image: UIImage(named: "homeIcon"), tag: 0)
+    let shortsTabBarItem = UITabBarItem(title: "Shorts", image: UIImage(named: "homeIcon"), tag: 1)
+    let plusTabBarItem  = UITabBarItem(title: "추가", image: UIImage(named: "homeIcon"), tag: 2)
+    let subscribeTabBarItem  = UITabBarItem(title: "구독", image: UIImage(named: "homeIcon"), tag: 3)
+    let archiveTabBarItem  = UITabBarItem(title: "보관함", image: UIImage(named: "homeIcon"), tag: 4)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +41,18 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
 
         UITabBar.appearance().barTintColor = .white
-        UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().tintColor = .black
-//        UITabBar.appearance().unselectedItemTintColor = .keepinGray2
+        UITabBar.appearance().isTranslucent = false
+        
+        if #available(iOS 15, *) {
+            let appearance = UITabBarAppearance()
+            let tabBar = UITabBar()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .white
+            appearance.selectionIndicatorTintColor = .black
+            tabBar.standardAppearance = appearance;
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
     }
     
 }
