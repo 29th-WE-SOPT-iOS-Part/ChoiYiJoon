@@ -31,29 +31,6 @@ class LoginVC: BaseVC {
         infoLabelLayout(labelName: "YouTube로 이동하며 계속하세요. 앱 및 Safari에서도 Google 서비스에 로그인 합니다.")
         setupAutoLayout()
     }
-    
-    @objc func toJoin(){
-        let nextVC = JoinVC()
-        self.navigationController?.pushViewController(nextVC, animated: true)
-    }
-    
-    @objc func toWelcome(){
-        let nextVC = WelcomeVC()
-        nextVC.name = nameTF.text
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true, completion: nil)
-    }
-    
-    @objc func textFillCheck(){
-        if nameTF.hasText && emailTF.hasText && pwTF.hasText{
-            nextButton.backgroundColor = .googleBlue
-            nextButton.isUserInteractionEnabled = true
-        }
-        else{
-            nextButton.backgroundColor = .lightGray
-            nextButton.isUserInteractionEnabled = false
-        }
-    }
 
     private func setupAutoLayout(){
         view.addSubviews([makeAcButton, nextButton])
@@ -78,4 +55,28 @@ class LoginVC: BaseVC {
         emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
         pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
     }
+    
+    @objc func toJoin(){
+        let nextVC = JoinVC()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @objc func toWelcome(){
+        let nextVC = WelcomeVC()
+        nextVC.name = nameTF.text
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    
+    @objc func textFillCheck(){
+        if nameTF.hasText && emailTF.hasText && pwTF.hasText{
+            nextButton.backgroundColor = .googleBlue
+            nextButton.isUserInteractionEnabled = true
+        }
+        else{
+            nextButton.backgroundColor = .lightGray
+            nextButton.isUserInteractionEnabled = false
+        }
+    }
+    
 }
