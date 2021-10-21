@@ -6,62 +6,58 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class JoinVC: BaseVC {
-
-    var safeButton = UIButton()
-    var safeLabel = UILabel()
-    var nextButton = UIButton()
+    
+    private let safeButton = UIButton().then{
+        $0.tintColor = .googleBlue
+        $0.layer.borderColor = UIColor.lightGray.cgColor
+        $0.layer.borderWidth = 1
+        $0.layer.cornerRadius = 3
+        $0.contentMode = .scaleToFill
+    }
+    
+    private let safeLabel = UILabel().then{
+        $0.text = "비밀번호 표시"
+        $0.textColor = .black
+        $0.font = UIFont.systemFont(ofSize: 12.0)
+        $0.sizeToFit()
+    }
+    
+    private let nextButton = UIButton().then{
+        $0.setTitle("다음", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .lightGray
+        $0.layer.cornerRadius = 10
+        $0.isUserInteractionEnabled = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubviews([safeLabel, safeButton, nextButton])
-        
         mainLabelLayout(labelName: "회원가입")
         infoLabelLayout(labelName: "")
-        safeButtonLayout()
-        safeLabelLayout()
-        nextButtonLayout()
-        
-        nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
-        emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
-        pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        setupAutoLayout()
     }
-
-    private func safeButtonLayout(){
-        safeButton.tintColor = .googleBlue
-        safeButton.layer.borderColor = UIColor.lightGray.cgColor
-        safeButton.layer.borderWidth = 1
-        safeButton.layer.cornerRadius = 3
-        safeButton.contentMode = .scaleToFill
+    
+    private func setupAutoLayout(){
+        view.addSubviews([safeLabel, safeButton, nextButton])
+        
         safeButton.snp.makeConstraints{ (make) in
             make.width.height.equalTo(17)
             make.leading.equalTo(30)
             make.top.equalTo(self.pwTF.snp.bottom).offset(15)
         }
-        
         safeButton.addTarget(self, action: #selector(toSafe), for: .touchUpInside)
-    }
-    
-    private func safeLabelLayout(){
-        safeLabel.text = "비밀번호 표시"
-        safeLabel.textColor = .black
-        safeLabel.font = UIFont.systemFont(ofSize: 12.0)
-        safeLabel.sizeToFit()
+        
         safeLabel.snp.makeConstraints{ (make) in
             make.centerY.equalTo(safeButton)
             make.top.equalTo(self.pwTF.snp.bottom).offset(15)
             make.left.equalTo(safeButton.snp.right).offset(10)
         }
-    }
-    
-    private func nextButtonLayout(){
-        nextButton.setTitle("다음", for: .normal)
-        nextButton.setTitleColor(.white, for: .normal)
-        nextButton.backgroundColor = .lightGray
-        nextButton.layer.cornerRadius = 10
-        nextButton.isUserInteractionEnabled = false
+        
         nextButton.snp.makeConstraints{ (make) in
             make.centerX.equalTo(self.view)
             make.height.equalTo(40)
@@ -69,18 +65,21 @@ class JoinVC: BaseVC {
             make.leading.equalTo(30)
             make.top.equalTo(self.safeButton.snp.bottom).offset(60)
         }
-        
         nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
+        
+        nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
     }
     
     @objc func textFillCheck(){
-        if nameTF.text == "" || emailTF.text == "" || pwTF.text == ""{
-            nextButton.backgroundColor = .lightGray
-            nextButton.isUserInteractionEnabled = false
-        }
-        else{
+        if nameTF.hasText && emailTF.hasText && pwTF.hasText{
             nextButton.backgroundColor = .googleBlue
             nextButton.isUserInteractionEnabled = true
+        }
+        else{
+            nextButton.backgroundColor = .lightGray
+            nextButton.isUserInteractionEnabled = false
         }
     }
     
