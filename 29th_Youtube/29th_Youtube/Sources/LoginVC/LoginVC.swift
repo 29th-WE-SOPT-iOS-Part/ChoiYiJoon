@@ -13,11 +13,13 @@ class LoginVC: BaseVC {
     
     private let makeAcButton = UIButton().then{
         $0.setTitle("계정만들기", for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
         $0.setTitleColor(.googleBlue, for: .normal)
     }
     
     private let nextButton = UIButton().then{
         $0.setTitle("다음", for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .lightGray
         $0.layer.cornerRadius = 10
@@ -34,17 +36,17 @@ class LoginVC: BaseVC {
         view.addSubviews([makeAcButton, nextButton])
         
         makeAcButton.snp.makeConstraints{ (make) in
-            make.width.equalTo(100)
-            make.height.equalTo(40)
-            make.top.equalTo(pwTF.snp.bottom).offset(60)
-            make.leading.equalTo(30)
+            make.width.equalTo(68)
+            make.height.equalTo(22)
+            make.top.equalTo(pwTF.snp.bottom).offset(73)
+            make.leading.equalTo(22)
         }
         
         nextButton.snp.makeConstraints{ (make) in
-            make.width.equalTo(70)
-            make.height.equalTo(40)
-            make.top.equalTo(pwTF.snp.bottom).offset(60)
-            make.trailing.equalTo(-30)
+            make.width.equalTo(74)
+            make.height.equalTo(42)
+            make.top.equalTo(pwTF.snp.bottom).offset(64)
+            make.trailing.equalTo(-22)
         }
         
         makeAcButton.addTarget(self, action: #selector(toJoin), for: .touchUpInside)
