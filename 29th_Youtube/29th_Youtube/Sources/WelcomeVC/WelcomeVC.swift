@@ -33,10 +33,10 @@ class WelcomeVC: UIViewController {
         $0.layer.cornerRadius = 10
     }
     
-    private let accountLabel = UILabel().then{
-        $0.textColor = .googleBlue
-        $0.font = UIFont.boldSystemFont(ofSize: 14.0)
-        $0.text = "다른 계정으로 로그인하기"
+    private let accountButton = UIButton().then{
+        $0.setTitle("다른 계정으로 로그인하기", for: .normal)
+        $0.setTitleColor(.googleBlue, for: .normal)
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
         $0.sizeToFit()
     }
 
@@ -48,7 +48,7 @@ class WelcomeVC: UIViewController {
     }
     
     private func setupAutoLayout(){
-        view.addSubviews([googleImg, welcomeLabel, okButton, accountLabel])
+        view.addSubviews([googleImg, welcomeLabel, okButton, accountButton])
         
         googleImg.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
@@ -69,13 +69,14 @@ class WelcomeVC: UIViewController {
             make.leading.trailing.equalToSuperview().inset(22)
         }
         
-        accountLabel.snp.makeConstraints{ (make) in
+        accountButton.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(okButton.snp.bottom).offset(23)
             make.leading.trailing.equalToSuperview().inset(111)
         }
         
         okButton.addTarget(self, action: #selector(toTabBar), for: .touchUpInside)
+        accountButton.addTarget(self, action: #selector(toRootVC), for: .touchUpInside)
     }
     
     func welcomeLabelLayout(labelName: String){
@@ -86,6 +87,11 @@ class WelcomeVC: UIViewController {
         let tabBar = BaseTBC()
         tabBar.modalPresentationStyle = .fullScreen
         self.present(tabBar, animated: true, completion: nil)
+    }
+    
+    @objc func toRootVC(){
+        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

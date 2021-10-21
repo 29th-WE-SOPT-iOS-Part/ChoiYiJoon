@@ -40,6 +40,7 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate {
             viewControllers?[$0].tabBarItem = UITabBarItem(title: titles[$0], image: defaultImages[$0], selectedImage: selectedImages[$0])
         }
         
+        //나중에 플러스 아이콘만 modal로 present 될 경우를 대비하여 delegate 코드 미리 추가했습니다!
         self.delegate = self
 
         UITabBar.appearance().barTintColor = .white

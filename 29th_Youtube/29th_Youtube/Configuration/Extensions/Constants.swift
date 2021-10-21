@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//샤라웃 to Taekki sunbae thank you
 struct Const{
     struct Image {
         static let homeIcon = UIImage(named: "homeIcon")
