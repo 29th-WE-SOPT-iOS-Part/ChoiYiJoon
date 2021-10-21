@@ -90,8 +90,11 @@ class WelcomeVC: UIViewController {
     }
     
     @objc func toRootVC(){
-        self.dismiss(animated: true, completion: nil)
-        self.navigationController?.popToRootViewController(animated: true)
+        guard let parentVC = presentingViewController as? UINavigationController else { return }
+
+        dismiss(animated: true) {
+            parentVC.popToRootViewController(animated: true)
+        }
     }
     
 }
