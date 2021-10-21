@@ -7,26 +7,29 @@
 
 import UIKit
 import SnapKit
+import Then
 
 class LoginVC: BaseVC {
     
-    var makeAcButton = UIButton()
-    var nextButton = UIButton()
-        
+    private let makeAcButton = UIButton().then{
+        $0.setTitle("계정만들기", for: .normal)
+        $0.setTitleColor(.googleBlue, for: .normal)
+    }
+    
+    private let nextButton = UIButton().then{
+        $0.setTitle("다음", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .lightGray
+        $0.layer.cornerRadius = 10
+        $0.isUserInteractionEnabled = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mainLabelLayout(labelName: "로그인")
         infoLabelLayout(labelName: "YouTube로 이동하며 계속하세요. 앱 및 Safari에서도 Google 서비스에 로그인 합니다.")
-        
-        view.addSubviews([makeAcButton, nextButton])
-        
-        makeAcButtonLayout()
-        nextButtonLayout()
-        
-        nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
-        emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
-        pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        setupAutoLayout()
     }
     
     @objc func toJoin(){
@@ -51,10 +54,10 @@ class LoginVC: BaseVC {
             nextButton.isUserInteractionEnabled = false
         }
     }
-    
-    private func makeAcButtonLayout(){
-        makeAcButton.setTitle("계정만들기", for: .normal)
-        makeAcButton.setTitleColor(.googleBlue, for: .normal)
+
+    private func setupAutoLayout(){
+        view.addSubviews([makeAcButton, nextButton])
+        
         makeAcButton.snp.makeConstraints{ (make) in
             make.width.equalTo(100)
             make.height.equalTo(40)
@@ -62,14 +65,7 @@ class LoginVC: BaseVC {
             make.top.equalTo(self.pwTF.snp.bottom).offset(60)
         }
         makeAcButton.addTarget(self, action: #selector(toJoin), for: .touchUpInside)
-    }
-    
-    private func nextButtonLayout(){
-        nextButton.setTitle("다음", for: .normal)
-        nextButton.setTitleColor(.white, for: .normal)
-        nextButton.backgroundColor = .lightGray
-        nextButton.layer.cornerRadius = 10
-        nextButton.isUserInteractionEnabled = false
+        
         nextButton.snp.makeConstraints{ (make) in
             make.width.equalTo(70)
             make.height.equalTo(40)
@@ -77,6 +73,9 @@ class LoginVC: BaseVC {
             make.top.equalTo(self.pwTF.snp.bottom).offset(60)
         }
         nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
+        
+        nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+        pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
     }
-
 }

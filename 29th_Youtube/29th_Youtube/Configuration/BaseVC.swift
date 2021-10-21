@@ -14,18 +14,7 @@ class BaseVC: UIViewController {
     var mainLabel = UILabel()
     var infoLabel = UILabel()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        setNavigation()
-        setupAutoLayout()
-    }
-
-    private func setNavigation(){
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
-    let googleImg = UIImageView().then{
+    private let googleImg = UIImageView().then{
         $0.image = UIImage(named: "googleImg")
         $0.contentMode = .scaleAspectFit
     }
@@ -47,6 +36,17 @@ class BaseVC: UIViewController {
         $0.borderStyle = .roundedRect
         $0.isSecureTextEntry = true
         $0.autocorrectionType = .no
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        setNavigation()
+        setupAutoLayout()
+    }
+
+    private func setNavigation(){
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func mainLabelLayout(labelName: String){
