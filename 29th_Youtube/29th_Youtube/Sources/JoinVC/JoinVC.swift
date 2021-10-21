@@ -16,9 +16,7 @@ class JoinVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(safeButton)
-        view.addSubview(safeLabel)
-        view.addSubview(nextButton)
+        view.addSubviews([safeLabel, safeButton, nextButton])
         
         mainLabelLayout(labelName: "회원가입")
         infoLabelLayout(labelName: "")

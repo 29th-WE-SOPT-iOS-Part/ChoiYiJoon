@@ -22,12 +22,7 @@ class BaseVC: UIViewController {
         view.backgroundColor = .white
         setNavigation()
         
-        view.addSubview(googleImg)
-        view.addSubview(mainLabel)
-        view.addSubview(infoLabel)
-        view.addSubview(nameTF)
-        view.addSubview(emailTF)
-        view.addSubview(pwTF)
+        view.addSubviews([googleImg, mainLabel, infoLabel, nameTF, emailTF, pwTF])
         
         googleImgLayout()
         nameTFLayout()

@@ -19,8 +19,7 @@ class LoginVC: BaseVC {
         mainLabelLayout(labelName: "로그인")
         infoLabelLayout(labelName: "YouTube로 이동하며 계속하세요. 앱 및 Safari에서도 Google 서비스에 로그인 합니다.")
         
-        self.view.addSubview(makeAcButton)
-        self.view.addSubview(nextButton)
+        view.addSubviews([makeAcButton, nextButton])
         
         makeAcButtonLayout()
         nextButtonLayout()
@@ -43,13 +42,13 @@ class LoginVC: BaseVC {
     }
     
     @objc func textFillCheck(){
-        if nameTF.text == "" || emailTF.text == "" || pwTF.text == ""{
-            nextButton.backgroundColor = .lightGray
-            nextButton.isUserInteractionEnabled = false
-        }
-        else{
+        if nameTF.hasText && emailTF.hasText && pwTF.hasText{
             nextButton.backgroundColor = .googleBlue
             nextButton.isUserInteractionEnabled = true
+        }
+        else{
+            nextButton.backgroundColor = .lightGray
+            nextButton.isUserInteractionEnabled = false
         }
     }
     
