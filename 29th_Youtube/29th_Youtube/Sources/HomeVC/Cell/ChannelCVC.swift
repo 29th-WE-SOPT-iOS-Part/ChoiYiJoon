@@ -9,9 +9,19 @@ import UIKit
 
 class ChannelCVC: UICollectionViewCell {
 
+    @IBOutlet weak var channelIcon: UIImageView!
+    @IBOutlet weak var channelName: UILabel!
+    
+    static let identifier = "ChannelCVC"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        channelName.sizeToFit()
+    }
+    
+    func setData(channelData: ChannelData) {
+        channelIcon.image = channelData.makeImage()
+        channelName.text = channelData.channelName
     }
 
 }
