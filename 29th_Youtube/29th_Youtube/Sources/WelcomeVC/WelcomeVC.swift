@@ -6,70 +6,95 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class WelcomeVC: UIViewController {
 
     var name : String?
     
-    var googleImg = UIImageView()
-    var welcomeLabel = UILabel()
-    var okButton = UIButton()
+    private let googleImg = UIImageView().then{
+        $0.image = UIImage(named: "googleImg")
+        $0.contentMode = .scaleAspectFit
+    }
     
+    private let welcomeLabel = UILabel().then{
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+        $0.textColor = .black
+        $0.font = UIFont.boldSystemFont(ofSize: 27.0)
+        $0.sizeToFit()
+    }
+    
+    private let okButton = UIButton().then{
+        $0.setTitle("확인", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .googleBlue
+        $0.layer.cornerRadius = 10
+    }
+    
+    private let accountButton = UIButton().then{
+        $0.setTitle("다른 계정으로 로그인하기", for: .normal)
+        $0.setTitleColor(.googleBlue, for: .normal)
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
+        $0.sizeToFit()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        view.addSubview(googleImg)
-        view.addSubview(welcomeLabel)
-        view.addSubview(okButton)
-        
-        googleImgLayout()
         welcomeLabelLayout(labelName: name!)
-        okButtonLayout()
+        setupAutoLayout()
     }
     
-    private func googleImgLayout(){
-        googleImg.image = UIImage(named: "googleImg")
-        googleImg.contentMode = .scaleAspectFit
+    private func setupAutoLayout(){
+        view.addSubviews([googleImg, welcomeLabel, okButton, accountButton])
+        
         googleImg.snp.makeConstraints{ (make) in
-            make.width.equalTo(160)
-            make.height.equalTo(70)
-            make.centerX.equalTo(self.view)
-            make.top.equalTo(220)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(118)
+            make.height.equalTo(40)
+            make.top.equalTo(248)
         }
+        
+        welcomeLabel.snp.makeConstraints{ (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(googleImg.snp.bottom).offset(23)
+        }
+        
+        okButton.snp.makeConstraints{ (make) in
+            make.centerX.equalToSuperview()
+            make.height.equalTo(42)
+            make.top.equalTo(welcomeLabel.snp.bottom).offset(53)
+            make.leading.trailing.equalToSuperview().inset(22)
+        }
+        
+        accountButton.snp.makeConstraints{ (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(okButton.snp.bottom).offset(23)
+            make.leading.trailing.equalToSuperview().inset(111)
+        }
+        
+        okButton.addTarget(self, action: #selector(toTabBar), for: .touchUpInside)
+        accountButton.addTarget(self, action: #selector(toRootVC), for: .touchUpInside)
     }
     
     func welcomeLabelLayout(labelName: String){
         welcomeLabel.text = "\(labelName)님\n환영합니다!"
-        welcomeLabel.numberOfLines = 0
-        welcomeLabel.textAlignment = .center
-        welcomeLabel.textColor = .black
-        welcomeLabel.font = UIFont.boldSystemFont(ofSize: 27.0)
-        welcomeLabel.sizeToFit()
-        welcomeLabel.snp.makeConstraints{ (make) in
-            make.centerX.equalTo(self.view)
-            make.top.equalTo(googleImg.snp.bottom).offset(10)
-        }
     }
     
-    private func okButtonLayout(){
-        okButton.setTitle("확인", for: .normal)
-        okButton.setTitleColor(.white, for: .normal)
-        okButton.backgroundColor = .googleBlue
-        okButton.layer.cornerRadius = 10
-        okButton.snp.makeConstraints{ (make) in
-            make.centerX.equalTo(self.view)
-            make.height.equalTo(40)
-            make.trailing.equalTo(-30)
-            make.leading.equalTo(30)
-            make.top.equalTo(self.welcomeLabel.snp.bottom).offset(60)
-        }
-        
-        okButton.addTarget(self, action: #selector(toDismiss), for: .touchUpInside)
+    @objc func toTabBar(){
+        let tabBar = BaseTBC()
+        tabBar.modalPresentationStyle = .fullScreen
+        self.present(tabBar, animated: true, completion: nil)
     }
     
-    @objc func toDismiss(){
-        self.dismiss(animated: true, completion: nil)
+    @objc func toRootVC(){
+        guard let parentVC = presentingViewController as? UINavigationController else { return }
+
+        dismiss(animated: true) {
+            parentVC.popToRootViewController(animated: true)
+        }
     }
     
 }

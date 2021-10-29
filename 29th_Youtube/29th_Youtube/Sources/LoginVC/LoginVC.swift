@@ -7,27 +7,57 @@
 
 import UIKit
 import SnapKit
+import Then
 
 class LoginVC: BaseVC {
     
-    var makeAcButton = UIButton()
-    var nextButton = UIButton()
-        
+    private let makeAcButton = UIButton().then{
+        $0.setTitle("계정만들기", for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
+        $0.setTitleColor(.googleBlue, for: .normal)
+    }
+    
+    private let nextButton = UIButton().then{
+        $0.setTitle("다음", for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .lightGray
+        $0.layer.cornerRadius = 10
+        $0.isUserInteractionEnabled = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mainLabelLayout(labelName: "로그인")
-        infoLabelLayout(labelName: "YouTube로 이동하며 계속하세요. 앱 및 Safari에서도 Google 서비스에 로그인 합니다.")
-        
-        self.view.addSubview(makeAcButton)
-        self.view.addSubview(nextButton)
-        
-        makeAcButtonLayout()
-        nextButtonLayout()
-        
+        labelLayout(mainName: "로그인", infoName: "YouTube로 이동하며 계속하세요. 앱 및 Safari에서도 Google 서비스에 로그인됩니다.")
+        setupAutoLayout()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        clearTextField()
         nameTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
         emailTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
         pwTF.addTarget(self, action: #selector(textFillCheck), for: .editingChanged)
+    }
+    
+    private func setupAutoLayout(){
+        view.addSubviews([makeAcButton, nextButton])
+        
+        makeAcButton.snp.makeConstraints{ (make) in
+            make.width.equalTo(68)
+            make.height.equalTo(22)
+            make.top.equalTo(pwTF.snp.bottom).offset(73)
+            make.leading.equalTo(22)
+        }
+        
+        nextButton.snp.makeConstraints{ (make) in
+            make.width.equalTo(74)
+            make.height.equalTo(42)
+            make.top.equalTo(pwTF.snp.bottom).offset(64)
+            make.trailing.equalTo(-22)
+        }
+        
+        makeAcButton.addTarget(self, action: #selector(toJoin), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
     }
     
     @objc func toJoin(){
@@ -43,41 +73,14 @@ class LoginVC: BaseVC {
     }
     
     @objc func textFillCheck(){
-        if nameTF.text == "" || emailTF.text == "" || pwTF.text == ""{
-            nextButton.backgroundColor = .lightGray
-            nextButton.isUserInteractionEnabled = false
-        }
-        else{
+        if nameTF.hasText && emailTF.hasText && pwTF.hasText{
             nextButton.backgroundColor = .googleBlue
             nextButton.isUserInteractionEnabled = true
         }
+        else{
+            nextButton.backgroundColor = .lightGray
+            nextButton.isUserInteractionEnabled = false
+        }
     }
     
-    private func makeAcButtonLayout(){
-        makeAcButton.setTitle("계정만들기", for: .normal)
-        makeAcButton.setTitleColor(.googleBlue, for: .normal)
-        makeAcButton.snp.makeConstraints{ (make) in
-            make.width.equalTo(100)
-            make.height.equalTo(40)
-            make.leading.equalTo(30)
-            make.top.equalTo(self.pwTF.snp.bottom).offset(60)
-        }
-        makeAcButton.addTarget(self, action: #selector(toJoin), for: .touchUpInside)
-    }
-    
-    private func nextButtonLayout(){
-        nextButton.setTitle("다음", for: .normal)
-        nextButton.setTitleColor(.white, for: .normal)
-        nextButton.backgroundColor = .lightGray
-        nextButton.layer.cornerRadius = 10
-        nextButton.isUserInteractionEnabled = false
-        nextButton.snp.makeConstraints{ (make) in
-            make.width.equalTo(70)
-            make.height.equalTo(40)
-            make.trailing.equalTo(-30)
-            make.top.equalTo(self.pwTF.snp.bottom).offset(60)
-        }
-        nextButton.addTarget(self, action: #selector(toWelcome), for: .touchUpInside)
-    }
-
 }

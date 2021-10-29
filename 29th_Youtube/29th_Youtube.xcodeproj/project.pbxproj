@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77DAC88627215FFB00B576D9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC88527215FFB00B576D9 /* UIView.swift */; };
+		77DAC88A2721FCC900B576D9 /* BaseTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8892721FCC900B576D9 /* BaseTBC.swift */; };
+		77DAC8912721FE3B00B576D9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8902721FE3B00B576D9 /* HomeVC.swift */; };
+		77DAC8932721FE5400B576D9 /* ShortsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8922721FE5400B576D9 /* ShortsVC.swift */; };
+		77DAC8952721FE6000B576D9 /* PlusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8942721FE6000B576D9 /* PlusVC.swift */; };
+		77DAC8972721FE7400B576D9 /* SubscribeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8962721FE7400B576D9 /* SubscribeVC.swift */; };
+		77DAC8992721FE8200B576D9 /* ArchiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8982721FE8200B576D9 /* ArchiveVC.swift */; };
+		77DAC89D2721FF8F00B576D9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC89C2721FF8F00B576D9 /* UIViewController.swift */; };
+		77DAC89F2722071500B576D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC89E2722071500B576D9 /* Constants.swift */; };
 		77FFCCD127105488000E49F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCD027105488000E49F7 /* AppDelegate.swift */; };
 		77FFCCD327105488000E49F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FFCCD227105488000E49F7 /* SceneDelegate.swift */; };
 		77FFCCDA2710548D000E49F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77FFCCD92710548D000E49F7 /* Assets.xcassets */; };
@@ -22,6 +31,15 @@
 /* Begin PBXFileReference section */
 		1515ED822D173FDD791B030B /* Pods-29th_Youtube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-29th_Youtube.debug.xcconfig"; path = "Target Support Files/Pods-29th_Youtube/Pods-29th_Youtube.debug.xcconfig"; sourceTree = "<group>"; };
 		2EE899D37341854FCE6A52A4 /* Pods-29th_Youtube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-29th_Youtube.release.xcconfig"; path = "Target Support Files/Pods-29th_Youtube/Pods-29th_Youtube.release.xcconfig"; sourceTree = "<group>"; };
+		77DAC88527215FFB00B576D9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		77DAC8892721FCC900B576D9 /* BaseTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTBC.swift; sourceTree = "<group>"; };
+		77DAC8902721FE3B00B576D9 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		77DAC8922721FE5400B576D9 /* ShortsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsVC.swift; sourceTree = "<group>"; };
+		77DAC8942721FE6000B576D9 /* PlusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusVC.swift; sourceTree = "<group>"; };
+		77DAC8962721FE7400B576D9 /* SubscribeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeVC.swift; sourceTree = "<group>"; };
+		77DAC8982721FE8200B576D9 /* ArchiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveVC.swift; sourceTree = "<group>"; };
+		77DAC89C2721FF8F00B576D9 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		77DAC89E2722071500B576D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		77FFCCCD27105487000E49F7 /* 29th_Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 29th_Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77FFCCD027105488000E49F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77FFCCD227105488000E49F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +73,66 @@
 				2EE899D37341854FCE6A52A4 /* Pods-29th_Youtube.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		77DAC88B2721FDEE00B576D9 /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				77DAC8902721FE3B00B576D9 /* HomeVC.swift */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		77DAC88C2721FDF400B576D9 /* ShortsVC */ = {
+			isa = PBXGroup;
+			children = (
+				77DAC8922721FE5400B576D9 /* ShortsVC.swift */,
+			);
+			path = ShortsVC;
+			sourceTree = "<group>";
+		};
+		77DAC88D2721FDFB00B576D9 /* PlusVC */ = {
+			isa = PBXGroup;
+			children = (
+				77DAC8942721FE6000B576D9 /* PlusVC.swift */,
+			);
+			path = PlusVC;
+			sourceTree = "<group>";
+		};
+		77DAC88E2721FE0200B576D9 /* SubscribeVC */ = {
+			isa = PBXGroup;
+			children = (
+				77DAC8962721FE7400B576D9 /* SubscribeVC.swift */,
+			);
+			path = SubscribeVC;
+			sourceTree = "<group>";
+		};
+		77DAC88F2721FE0B00B576D9 /* ArchiveVC */ = {
+			isa = PBXGroup;
+			children = (
+				77DAC8982721FE8200B576D9 /* ArchiveVC.swift */,
+			);
+			path = ArchiveVC;
+			sourceTree = "<group>";
+		};
+		77DAC89A2721FF0F00B576D9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				77FFCCF327107B7C000E49F7 /* UIColor.swift */,
+				77DAC88527215FFB00B576D9 /* UIView.swift */,
+				77DAC89C2721FF8F00B576D9 /* UIViewController.swift */,
+				77DAC89E2722071500B576D9 /* Constants.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		77DAC89B2721FF2700B576D9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				77FFCCF127106C4C000E49F7 /* BaseVC.swift */,
+				77DAC8892721FCC900B576D9 /* BaseTBC.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		77FFCCC427105487000E49F7 = {
@@ -92,8 +170,8 @@
 		77FFCCE427105B28000E49F7 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				77FFCCF127106C4C000E49F7 /* BaseVC.swift */,
-				77FFCCF327107B7C000E49F7 /* UIColor.swift */,
+				77DAC89A2721FF0F00B576D9 /* Extensions */,
+				77DAC89B2721FF2700B576D9 /* Base */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -101,6 +179,11 @@
 		77FFCCE527105B40000E49F7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				77DAC88B2721FDEE00B576D9 /* HomeVC */,
+				77DAC88C2721FDF400B576D9 /* ShortsVC */,
+				77DAC88D2721FDFB00B576D9 /* PlusVC */,
+				77DAC88E2721FE0200B576D9 /* SubscribeVC */,
+				77DAC88F2721FE0B00B576D9 /* ArchiveVC */,
 				77FFCCE827105B9E000E49F7 /* WelcomeVC */,
 				77FFCCE727105B95000E49F7 /* JoinVC */,
 				77FFCCE627105B79000E49F7 /* LoginVC */,
@@ -253,13 +336,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DAC88A2721FCC900B576D9 /* BaseTBC.swift in Sources */,
+				77DAC8912721FE3B00B576D9 /* HomeVC.swift in Sources */,
+				77DAC88627215FFB00B576D9 /* UIView.swift in Sources */,
 				77FFCCEC27105C04000E49F7 /* JoinVC.swift in Sources */,
 				77FFCCF427107B7C000E49F7 /* UIColor.swift in Sources */,
+				77DAC8992721FE8200B576D9 /* ArchiveVC.swift in Sources */,
 				77FFCCEA27105BF3000E49F7 /* WelcomeVC.swift in Sources */,
+				77DAC89F2722071500B576D9 /* Constants.swift in Sources */,
 				77FFCCD127105488000E49F7 /* AppDelegate.swift in Sources */,
+				77DAC8972721FE7400B576D9 /* SubscribeVC.swift in Sources */,
 				77FFCCD327105488000E49F7 /* SceneDelegate.swift in Sources */,
+				77DAC8952721FE6000B576D9 /* PlusVC.swift in Sources */,
 				77FFCCEE27105C12000E49F7 /* LoginVC.swift in Sources */,
+				77DAC8932721FE5400B576D9 /* ShortsVC.swift in Sources */,
 				77FFCCF227106C4C000E49F7 /* BaseVC.swift in Sources */,
+				77DAC89D2721FF8F00B576D9 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
