@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7766D29C272C3C6000FE6E2E /* ChannelCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766D29A272C3C6000FE6E2E /* ChannelCVC.swift */; };
 		7766D29D272C3C6000FE6E2E /* ChannelCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7766D29B272C3C6000FE6E2E /* ChannelCVC.xib */; };
+		7766D2A0272C3EEB00FE6E2E /* HomeXibVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766D29E272C3EEB00FE6E2E /* HomeXibVC.swift */; };
+		7766D2A1272C3EEB00FE6E2E /* HomeXibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7766D29F272C3EEB00FE6E2E /* HomeXibVC.xib */; };
+		7766D2A6272C43D600FE6E2E /* ChannelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766D2A5272C43D600FE6E2E /* ChannelData.swift */; };
 		77DAC88627215FFB00B576D9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC88527215FFB00B576D9 /* UIView.swift */; };
 		77DAC88A2721FCC900B576D9 /* BaseTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8892721FCC900B576D9 /* BaseTBC.swift */; };
 		77DAC8912721FE3B00B576D9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8902721FE3B00B576D9 /* HomeVC.swift */; };
@@ -35,6 +38,9 @@
 		2EE899D37341854FCE6A52A4 /* Pods-29th_Youtube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-29th_Youtube.release.xcconfig"; path = "Target Support Files/Pods-29th_Youtube/Pods-29th_Youtube.release.xcconfig"; sourceTree = "<group>"; };
 		7766D29A272C3C6000FE6E2E /* ChannelCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCVC.swift; sourceTree = "<group>"; };
 		7766D29B272C3C6000FE6E2E /* ChannelCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCVC.xib; sourceTree = "<group>"; };
+		7766D29E272C3EEB00FE6E2E /* HomeXibVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeXibVC.swift; sourceTree = "<group>"; };
+		7766D29F272C3EEB00FE6E2E /* HomeXibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeXibVC.xib; sourceTree = "<group>"; };
+		7766D2A5272C43D600FE6E2E /* ChannelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelData.swift; sourceTree = "<group>"; };
 		77DAC88527215FFB00B576D9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		77DAC8892721FCC900B576D9 /* BaseTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTBC.swift; sourceTree = "<group>"; };
 		77DAC8902721FE3B00B576D9 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -88,10 +94,29 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		7766D2A3272C3EFA00FE6E2E /* HomeXib */ = {
+			isa = PBXGroup;
+			children = (
+				7766D29E272C3EEB00FE6E2E /* HomeXibVC.swift */,
+				7766D29F272C3EEB00FE6E2E /* HomeXibVC.xib */,
+			);
+			path = HomeXib;
+			sourceTree = "<group>";
+		};
+		7766D2A4272C43BE00FE6E2E /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				7766D2A5272C43D600FE6E2E /* ChannelData.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		77DAC88B2721FDEE00B576D9 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				7766D2A4272C43BE00FE6E2E /* DataModel */,
 				7766D299272C3C0200FE6E2E /* Cell */,
+				7766D2A3272C3EFA00FE6E2E /* HomeXib */,
 				77DAC8902721FE3B00B576D9 /* HomeVC.swift */,
 			);
 			path = HomeVC;
@@ -299,6 +324,7 @@
 				7766D29D272C3C6000FE6E2E /* ChannelCVC.xib in Resources */,
 				77FFCCDD2710548D000E49F7 /* LaunchScreen.storyboard in Resources */,
 				77FFCCDA2710548D000E49F7 /* Assets.xcassets in Resources */,
+				7766D2A1272C3EEB00FE6E2E /* HomeXibVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,12 +384,14 @@
 				77FFCCEC27105C04000E49F7 /* JoinVC.swift in Sources */,
 				77FFCCF427107B7C000E49F7 /* UIColor.swift in Sources */,
 				77DAC8992721FE8200B576D9 /* ArchiveVC.swift in Sources */,
+				7766D2A6272C43D600FE6E2E /* ChannelData.swift in Sources */,
 				77FFCCEA27105BF3000E49F7 /* WelcomeVC.swift in Sources */,
 				77DAC89F2722071500B576D9 /* Constants.swift in Sources */,
 				77FFCCD127105488000E49F7 /* AppDelegate.swift in Sources */,
 				77DAC8972721FE7400B576D9 /* SubscribeVC.swift in Sources */,
 				77FFCCD327105488000E49F7 /* SceneDelegate.swift in Sources */,
 				77DAC8952721FE6000B576D9 /* PlusVC.swift in Sources */,
+				7766D2A0272C3EEB00FE6E2E /* HomeXibVC.swift in Sources */,
 				77FFCCEE27105C12000E49F7 /* LoginVC.swift in Sources */,
 				77DAC8932721FE5400B576D9 /* ShortsVC.swift in Sources */,
 				77FFCCF227106C4C000E49F7 /* BaseVC.swift in Sources */,
