@@ -13,6 +13,7 @@ class HomeXibVC: UIViewController {
     @IBOutlet weak var contentTV: UITableView!
     
     var channelList: [ChannelData] = []
+    var contentList: [ContentData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,17 @@ class HomeXibVC: UIViewController {
     }
     
     func initChannelList(){
+        channelList.append(contentsOf: [
+            ChannelData(channelName: "Plan", channelIcon: "ggamju1"),
+            ChannelData(channelName: "Design", channelIcon: "ggamju2"),
+            ChannelData(channelName: "Android", channelIcon: "ggamju3"),
+            ChannelData(channelName: "iOS", channelIcon: "ggamju4"),
+            ChannelData(channelName: "Server", channelIcon: "ggamju5"),
+            ChannelData(channelName: "Web", channelIcon: "ggamju6")
+        ])
+    }
+    
+    func initContentList(){
         channelList.append(contentsOf: [
             ChannelData(channelName: "Plan", channelIcon: "ggamju1"),
             ChannelData(channelName: "Design", channelIcon: "ggamju2"),

@@ -12,6 +12,7 @@
 		7766D2A0272C3EEB00FE6E2E /* HomeXibVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766D29E272C3EEB00FE6E2E /* HomeXibVC.swift */; };
 		7766D2A1272C3EEB00FE6E2E /* HomeXibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7766D29F272C3EEB00FE6E2E /* HomeXibVC.xib */; };
 		7766D2A6272C43D600FE6E2E /* ChannelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766D2A5272C43D600FE6E2E /* ChannelData.swift */; };
+		7766D2A8272C476900FE6E2E /* ContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766D2A7272C476900FE6E2E /* ContentData.swift */; };
 		77DAC88627215FFB00B576D9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC88527215FFB00B576D9 /* UIView.swift */; };
 		77DAC88A2721FCC900B576D9 /* BaseTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8892721FCC900B576D9 /* BaseTBC.swift */; };
 		77DAC8912721FE3B00B576D9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAC8902721FE3B00B576D9 /* HomeVC.swift */; };
@@ -41,6 +42,7 @@
 		7766D29E272C3EEB00FE6E2E /* HomeXibVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeXibVC.swift; sourceTree = "<group>"; };
 		7766D29F272C3EEB00FE6E2E /* HomeXibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeXibVC.xib; sourceTree = "<group>"; };
 		7766D2A5272C43D600FE6E2E /* ChannelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelData.swift; sourceTree = "<group>"; };
+		7766D2A7272C476900FE6E2E /* ContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentData.swift; sourceTree = "<group>"; };
 		77DAC88527215FFB00B576D9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		77DAC8892721FCC900B576D9 /* BaseTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTBC.swift; sourceTree = "<group>"; };
 		77DAC8902721FE3B00B576D9 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				7766D2A5272C43D600FE6E2E /* ChannelData.swift */,
+				7766D2A7272C476900FE6E2E /* ContentData.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77DAC88A2721FCC900B576D9 /* BaseTBC.swift in Sources */,
+				7766D2A8272C476900FE6E2E /* ContentData.swift in Sources */,
 				77DAC8912721FE3B00B576D9 /* HomeVC.swift in Sources */,
 				77DAC88627215FFB00B576D9 /* UIView.swift in Sources */,
 				7766D29C272C3C6000FE6E2E /* ChannelCVC.swift in Sources */,
