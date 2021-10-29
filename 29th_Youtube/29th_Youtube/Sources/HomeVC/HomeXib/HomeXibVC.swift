@@ -18,16 +18,17 @@ class HomeXibVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initChannelList()
+        initContentList()
         registerXib()
         setUI()
     }
     
     func registerXib(){
-        let xibName = UINib(nibName: ChannelCVC.identifier, bundle: nil)
-        channelCV.register(xibName, forCellWithReuseIdentifier: ChannelCVC.identifier)
+        let channelCVXibName = UINib(nibName: ChannelCVC.identifier, bundle: nil)
+        channelCV.register(channelCVXibName, forCellWithReuseIdentifier: ChannelCVC.identifier)
         
-//        let xibName = UINib(nibName: contentTV.identifier, bundle: nil)
-//        contentTV.register(xibName, forCellReuseIdentifier: .identifier)
+        let contentTVXibName = UINib(nibName: ContentTVC.identifier, bundle: nil)
+        contentTV.register(contentTVXibName, forCellReuseIdentifier: ContentTVC.identifier)
     }
     
     func initChannelList(){
@@ -42,21 +43,20 @@ class HomeXibVC: UIViewController {
     }
     
     func initContentList(){
-        channelList.append(contentsOf: [
-            ChannelData(channelName: "Plan", channelIcon: "ggamju1"),
-            ChannelData(channelName: "Design", channelIcon: "ggamju2"),
-            ChannelData(channelName: "Android", channelIcon: "ggamju3"),
-            ChannelData(channelName: "iOS", channelIcon: "ggamju4"),
-            ChannelData(channelName: "Server", channelIcon: "ggamju5"),
-            ChannelData(channelName: "Web", channelIcon: "ggamju6")
+        contentList.append(contentsOf: [
+            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
+            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
+            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
+            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
+            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart")
         ])
     }
     
     func setUI(){
         channelCV.dataSource = self
         channelCV.delegate = self
-//        contentTV.dataSource = self
-//        contentTV.delegate = self
+        contentTV.dataSource = self
+        contentTV.delegate = self
     }
     
 }
@@ -95,3 +95,23 @@ extension HomeXibVC: UICollectionViewDelegateFlowLayout{
         return 0
     }
 }
+
+extension HomeXibVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 306
+    }
+}
+
+extension HomeXibVC: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contentList.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTVC.identifier) as? ContentTVC else {return UITableViewCell()}
+        
+        cell.setData(contentData: contentList[indexPath.row])
+        return cell
+    }
+}
+
