@@ -12,6 +12,8 @@ class HomeXibVC: UIViewController {
     @IBOutlet weak var channelCV: UICollectionView!
     @IBOutlet weak var contentTV: UITableView!
     
+    @IBOutlet weak var profileImg: UIImageView!
+    
     var channelList: [ChannelData] = []
     var contentList: [ContentData] = []
     
@@ -21,6 +23,7 @@ class HomeXibVC: UIViewController {
         initContentList()
         registerXib()
         setUI()
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func registerXib(){
@@ -57,8 +60,15 @@ class HomeXibVC: UIViewController {
         channelCV.delegate = self
         contentTV.dataSource = self
         contentTV.delegate = self
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchToLogin))
+        profileImg.addGestureRecognizer(tapGesture)
+        profileImg.isUserInteractionEnabled = true
     }
     
+    @objc func touchToLogin() {
+        let nextVC = LoginVC()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 extension HomeXibVC: UICollectionViewDelegate{

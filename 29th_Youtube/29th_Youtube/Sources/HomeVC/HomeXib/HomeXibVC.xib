@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="channelCV" destination="8IQ-Vh-T9u" id="bGe-Ts-96T"/>
                 <outlet property="contentTV" destination="PLz-Dk-GKD" id="mDO-xC-j4f"/>
+                <outlet property="profileImg" destination="yJs-d6-INf" id="cue-b6-ARG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
