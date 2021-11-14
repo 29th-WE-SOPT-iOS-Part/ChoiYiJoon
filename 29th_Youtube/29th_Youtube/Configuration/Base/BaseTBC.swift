@@ -24,7 +24,7 @@ class BaseTBC: UITabBarController, UITabBarControllerDelegate {
                          Const.Image.subscriptionsIconFill,
                          Const.Image.LibraryIconFill]
     
-    let views = [HomeVC(), ShortsVC(), PlusVC(), SubscribeVC(), ArchiveVC()]
+    let views = [HomeXibVC(), ShortsVC(), PlusVC(), SubscribeVC(), ArchiveVC()]
     var VCs : [UINavigationController] = []
     
     override func viewDidLoad() {

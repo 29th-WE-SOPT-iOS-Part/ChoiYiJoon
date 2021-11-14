@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeXibVC" customModule="_9th_Youtube" customModuleProvider="target">
+            <connections>
+                <outlet property="channelCV" destination="8IQ-Vh-T9u" id="bGe-Ts-96T"/>
+                <outlet property="contentTV" destination="PLz-Dk-GKD" id="mDO-xC-j4f"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CuK-Wp-CJn">
+                    <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 205" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-yd-0hF">
+                            <rect key="frame" x="16" y="11" width="96" height="20"/>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wr5-qf-E8L">
+                            <rect key="frame" x="215" y="10" width="144" height="24"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windowSharingIcon" translatesAutoresizingMaskIntoConstraints="NO" id="d6f-8B-UoE">
+                                    <rect key="frame" x="0.0" y="0.0" width="36" height="24"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notificationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mDX-O1-cag">
+                                    <rect key="frame" x="36" y="0.0" width="36" height="24"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zJL-U7-07w">
+                                    <rect key="frame" x="72" y="0.0" width="36" height="24"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wesoptProfile" translatesAutoresizingMaskIntoConstraints="NO" id="yJs-d6-INf">
+                                    <rect key="frame" x="108" y="0.0" width="36" height="24"/>
+                                </imageView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="WTK-yd-0hF" secondAttribute="bottom" constant="13" id="6cy-9w-nfp"/>
+                        <constraint firstAttribute="trailing" secondItem="wr5-qf-E8L" secondAttribute="trailing" constant="16" id="JHR-u6-yfa"/>
+                        <constraint firstItem="WTK-yd-0hF" firstAttribute="top" secondItem="CuK-Wp-CJn" secondAttribute="top" constant="11" id="NDS-QX-9Oa"/>
+                        <constraint firstItem="wr5-qf-E8L" firstAttribute="top" secondItem="CuK-Wp-CJn" secondAttribute="top" constant="10" id="gIa-Qq-kZo"/>
+                        <constraint firstAttribute="bottom" secondItem="wr5-qf-E8L" secondAttribute="bottom" constant="10" id="hOi-U4-PFW"/>
+                        <constraint firstItem="WTK-yd-0hF" firstAttribute="leading" secondItem="CuK-Wp-CJn" secondAttribute="leading" constant="16" id="i4m-aK-sxO"/>
+                        <constraint firstAttribute="height" constant="44" id="jfK-Fu-Moe"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8IQ-Vh-T9u">
+                    <rect key="frame" x="0.0" y="88" width="375" height="104"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="104" id="U7C-Sa-Yq9"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MQ3-hK-Qfp">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PLz-Dk-GKD">
+                    <rect key="frame" x="0.0" y="192" width="375" height="620"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="8IQ-Vh-T9u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2Hq-de-rds"/>
+                <constraint firstItem="8IQ-Vh-T9u" firstAttribute="top" secondItem="CuK-Wp-CJn" secondAttribute="bottom" id="3s6-5r-T9x"/>
+                <constraint firstItem="PLz-Dk-GKD" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7CN-D2-iVV"/>
+                <constraint firstItem="CuK-Wp-CJn" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="P5T-zZ-fIi"/>
+                <constraint firstItem="PLz-Dk-GKD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QEZ-TI-ynF"/>
+                <constraint firstItem="PLz-Dk-GKD" firstAttribute="top" secondItem="8IQ-Vh-T9u" secondAttribute="bottom" id="QWt-Uo-cYL"/>
+                <constraint firstItem="CuK-Wp-CJn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SbD-Uv-ZFv"/>
+                <constraint firstAttribute="bottom" secondItem="PLz-Dk-GKD" secondAttribute="bottom" id="W6R-u3-haL"/>
+                <constraint firstItem="8IQ-Vh-T9u" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="cz3-QK-qLM"/>
+                <constraint firstItem="CuK-Wp-CJn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pnf-ld-tYl"/>
+            </constraints>
+            <point key="canvasLocation" x="136.80000000000001" y="90.14778325123153"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="SearchIcon" width="32.333332061767578" height="32"/>
+        <image name="image 205" width="96" height="20"/>
+        <image name="notificationIcon" width="32.333332061767578" height="32"/>
+        <image name="wesoptProfile" width="36" height="36"/>
+        <image name="windowSharingIcon" width="32.333332061767578" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
