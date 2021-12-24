@@ -12,6 +12,8 @@ class HomeXibVC: UIViewController {
     @IBOutlet weak var channelCV: UICollectionView!
     @IBOutlet weak var contentTV: UITableView!
     
+    @IBOutlet weak var profileImg: UIImageView!
+    
     var channelList: [ChannelData] = []
     var contentList: [ContentData] = []
     
@@ -21,6 +23,7 @@ class HomeXibVC: UIViewController {
         initContentList()
         registerXib()
         setUI()
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func registerXib(){
@@ -44,11 +47,12 @@ class HomeXibVC: UIViewController {
     
     func initContentList(){
         contentList.append(contentsOf: [
-            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
-            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
-            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
-            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
-            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart")
+            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart", description: "WE SOPT : 조회수 100만회 : 3주 전"),
+            ContentData(contentTitle: "weSoptDesignPart", thumnbnail: "wesoptDesignPart", description: "WE SOPT : 조회수 100만회 : 3주 전"),
+            ContentData(contentTitle: "weSoptAndroidPart", thumnbnail: "wesoptAndroidPart", description: "WE SOPT : 조회수 100만회 : 3주 전"),
+            ContentData(contentTitle: "weSoptiOSPart", thumnbnail: "wesoptiOSPart", description: "WE SOPT : 조회수 100만회 : 3주 전"),
+            ContentData(contentTitle: "weSoptServerPart", thumnbnail: "wesoptServerPart", description: "WE SOPT : 조회수 100만회 : 3주 전"),
+            ContentData(contentTitle: "weSoptWebPart", thumnbnail: "wesoptWebPart", description: "WE SOPT : 조회수 100만회 : 3주 전")
         ])
     }
     
@@ -57,8 +61,15 @@ class HomeXibVC: UIViewController {
         channelCV.delegate = self
         contentTV.dataSource = self
         contentTV.delegate = self
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchToLogin))
+        profileImg.addGestureRecognizer(tapGesture)
+        profileImg.isUserInteractionEnabled = true
     }
     
+    @objc func touchToLogin() {
+        let nextVC = LoginVC()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 extension HomeXibVC: UICollectionViewDelegate{
@@ -111,6 +122,13 @@ extension HomeXibVC: UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTVC.identifier) as? ContentTVC else {return UITableViewCell()}
         
         cell.setData(contentData: contentList[indexPath.row])
+        cell.presentToDetailViewController = {
+            // 디테일로 이동
+            let nextVC = DetailVC()
+            nextVC.contentList = self.contentList[indexPath.row]
+            nextVC.modalPresentationStyle = .overFullScreen
+            self.present(nextVC, animated: true, completion: nil)
+        }
         return cell
     }
 }
