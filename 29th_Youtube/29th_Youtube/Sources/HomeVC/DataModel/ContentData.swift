@@ -11,6 +11,7 @@ import UIKit
 struct ContentData{
     let contentTitle: String
     let thumnbnail: String
+    let description: String
     
     func makeImage() -> UIImage? {
         return UIImage(named: thumnbnail)

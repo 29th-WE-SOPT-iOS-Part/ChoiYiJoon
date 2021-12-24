@@ -47,12 +47,12 @@ class HomeXibVC: UIViewController {
     
     func initContentList(){
         contentList.append(contentsOf: [
-            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
-            ContentData(contentTitle: "weSoptDesignPart", thumnbnail: "wesoptDesignPart"),
-            ContentData(contentTitle: "weSoptAndroidPart", thumnbnail: "wesoptAndroidPart"),
-            ContentData(contentTitle: "weSoptiOSPart", thumnbnail: "wesoptiOSPart"),
-            ContentData(contentTitle: "weSoptServerPart", thumnbnail: "wesoptServerPart"),
-            ContentData(contentTitle: "weSoptWebPart", thumnbnail: "wesoptWebPart")
+            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart", description: "WE SOPT : 조회수 100만회 : 3주 전"),
+            ContentData(contentTitle: "weSoptDesignPart", thumnbnail: "wesoptDesignPart", description: "WE SOPT : 조회수 100만회 : 3주 전"),
+            ContentData(contentTitle: "weSoptAndroidPart", thumnbnail: "wesoptAndroidPart", description: "WE SOPT : 조회수 100만회 : 3주 전"),
+            ContentData(contentTitle: "weSoptiOSPart", thumnbnail: "wesoptiOSPart", description: "WE SOPT : 조회수 100만회 : 3주 전"),
+            ContentData(contentTitle: "weSoptServerPart", thumnbnail: "wesoptServerPart", description: "WE SOPT : 조회수 100만회 : 3주 전"),
+            ContentData(contentTitle: "weSoptWebPart", thumnbnail: "wesoptWebPart", description: "WE SOPT : 조회수 100만회 : 3주 전")
         ])
     }
     
@@ -124,6 +124,10 @@ extension HomeXibVC: UITableViewDataSource{
         cell.setData(contentData: contentList[indexPath.row])
         cell.presentToDetailViewController = {
             // 디테일로 이동
+            let nextVC = DetailVC()
+            nextVC.contentList = self.contentList[indexPath.row]
+            nextVC.modalPresentationStyle = .overFullScreen
+            self.present(nextVC, animated: true, completion: nil)
         }
         return cell
     }
