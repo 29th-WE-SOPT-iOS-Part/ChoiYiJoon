@@ -122,6 +122,9 @@ extension HomeXibVC: UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTVC.identifier) as? ContentTVC else {return UITableViewCell()}
         
         cell.setData(contentData: contentList[indexPath.row])
+        cell.presentToDetailViewController = {
+            // 디테일로 이동
+        }
         return cell
     }
 }

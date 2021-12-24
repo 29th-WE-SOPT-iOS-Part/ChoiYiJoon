@@ -15,6 +15,8 @@ class ContentTVC: UITableViewCell {
     
     static let identifier = "ContentTVC"
     
+    var presentToDetailViewController: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
@@ -28,10 +30,21 @@ class ContentTVC: UITableViewCell {
     func setUI(){
         descriptions.text = "WE SOPT : 조회수 100만회 : 3주 전"
         descriptions.textColor = .darkGray
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        tapGesture.delegate = self
+
+        thumbnail.isUserInteractionEnabled = true
+        thumbnail.addGestureRecognizer(tapGesture)
     }
     
     func setData(contentData: ContentData) {
         thumbnail.image = contentData.makeImage()
         title.text = contentData.contentTitle
     }
+                                                                        
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        presentToDetailViewController?()
+    }
+                                                                    
 }
+
