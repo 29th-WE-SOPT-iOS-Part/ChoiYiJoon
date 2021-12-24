@@ -15,6 +15,9 @@ class DetailVC: UIViewController {
     
     var contentList : ContentData?
     
+    @IBAction func dismissVC(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()

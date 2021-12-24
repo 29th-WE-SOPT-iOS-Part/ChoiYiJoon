@@ -48,6 +48,9 @@
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="arrowtriangle.down.fill" catalog="system"/>
+                    <connections>
+                        <action selector="dismissVC:" destination="-1" eventType="touchUpInside" id="ia8-hv-bQR"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
