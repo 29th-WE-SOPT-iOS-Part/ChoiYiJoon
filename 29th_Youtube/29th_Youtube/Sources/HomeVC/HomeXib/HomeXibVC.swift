@@ -48,10 +48,11 @@ class HomeXibVC: UIViewController {
     func initContentList(){
         contentList.append(contentsOf: [
             ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
-            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
-            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
-            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart"),
-            ContentData(contentTitle: "weSoptPlanPart", thumnbnail: "wesoptPlanPart")
+            ContentData(contentTitle: "weSoptDesignPart", thumnbnail: "wesoptDesignPart"),
+            ContentData(contentTitle: "weSoptAndroidPart", thumnbnail: "wesoptAndroidPart"),
+            ContentData(contentTitle: "weSoptiOSPart", thumnbnail: "wesoptiOSPart"),
+            ContentData(contentTitle: "weSoptServerPart", thumnbnail: "wesoptServerPart"),
+            ContentData(contentTitle: "weSoptWebPart", thumnbnail: "wesoptWebPart")
         ])
     }
     
